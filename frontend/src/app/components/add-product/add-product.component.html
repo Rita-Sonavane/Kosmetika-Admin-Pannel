@@ -1,0 +1,210 @@
+<div class="container">
+    <header class="header">
+        <h1 id="title" class="text-center">Create Product</h1>
+        <p id="description" class="text-center">
+            <!-- Thank you for taking the time to help us improve the platform -->
+        </p>
+    </header>
+    <div class="form-wrap">
+        <form id="survey-form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Product Category</label>
+                        <select id="dropdown" id="category" formControlName="category" class="form-control" required>
+                            <option disabled selected value>Select</option>
+                            <option value="skin-care">Skin Care</option>
+                            <option value="hair-care">Hair Care</option>
+                            <option value="oral-care">Oral Care</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label id="name-label" for="name">Product Title</label>
+                        <input type="text" formControlName="name" id="name" placeholder="Enter product name"
+                            class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Product Brand</label>
+                        <select id="dropdown" formControlName="brand" class="form-control" required>
+                            <option disabled selected value>Select</option>
+                            <option value="Crebeau">CreBeau</option>
+                            <option value="Hello Bubble">Hello Bubble</option>
+                            <option value="Guerisson">Guerisson</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label id="number-label" for="number">Price <small> (INR) </small></label>
+                        <input type="number" id="number" formControlName="price" min="10"
+                            class="form-control just-number price-format-input" placeholder="0.00">
+
+                        <!-- <input type="number" name="age" id="number" min="10" max="99" class="form-control"
+                            placeholder="Age"> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Product Form</label>
+                        <select id="dropdown" formControlName="item_form" class="form-control" required>
+                            <option disabled selected value>Select</option>
+                            <option value="Liquid">Liquid</option>
+                            <option value="Cream">Cream</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label id="number-label" for="number">Product Volume <small> (g/ml) </small></label>
+                        <input type="text" formControlName="item_volume"
+                            class="form-control just-number price-format-input" placeholder="Item Volume">
+
+                        <!-- <input type="number" name="age" id="number" min="10" max="99" class="form-control"
+                            placeholder="Age"> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Skin Type</label>
+                        <select id="dropdown" formControlName="skin_type" class="form-control" required>
+                            <option disabled selected value>Select</option>
+                            <option value="All skin Types">All skin Types</option>
+                            <option value="dry">Dry</option>
+                            <option value="Sensitive">Sensitive</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Hair Type</label>
+                        <select id="dropdown" formControlName="hair_type" class="form-control" required>
+                            <option disabled selected value>Select</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Curly">Curly</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Product Type</label>
+                        <select id="dropdown" formControlName="type_product" class="form-control" required>
+                            <option disabled selected value>Select</option>
+                            <option value="skin">Skin</option>
+                            <option value="hair">Hair</option>
+                            <option value="oral">Oral</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>SPF</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" value="Between 15-30" formControlName="spf"
+                                class="custom-control-input" checked="">
+                            <label class="custom-control-label" for="customRadioInline1">Between 15-30</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" value="below15" formControlName="spf"
+                                class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline2">Below 15</label>
+                        </div>
+                        <!-- <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline3" value="Not sure" name="customRadioInline1"
+                                class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline3">Not sure</label>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Conscious</label>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" value="Clruelty Free"
+                                formControlName="Conscious" class="custom-control-input" checked="">
+                            <label class="custom-control-label" for="customRadioInline1">Clruelty Free</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" value="Vegan" formControlName="Conscious"
+                                class="custom-control-input" checked="">
+                            <label class="custom-control-label" for="customRadioInline1">Vegan</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" value="Dryness" formControlName="Conscious"
+                                class="custom-control-input" checked="">
+                            <label class="custom-control-label" for="customRadioInline1">Dryness</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" value="Hair Loss" formControlName="Conscious"
+                                class="custom-control-input" checked="">
+                            <label class="custom-control-label" for="customRadioInline1">Hair Loss</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Upload Image</label>
+                        <div class="input-group btn-upload">
+                            <span class="input-group-btn">
+                                <div class="btn btn-upload-input">
+                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                    <span class="btn-upload-input-title"><i class="fa fa-upload fw"></i>Choose
+                                        File</span>
+                                    <input type="file" formControlName="imageUrl" name="input-file-preview" (change)="onFileChange($event)" />
+                                    <!-- rename it -->
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Discription</label>
+                        <textarea id="comments" class="form-control" formControlName="description"
+                            placeholder="Enter product description here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <button type="submit" id="submit" class="btn btn-primary btn-block">Add Product</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
